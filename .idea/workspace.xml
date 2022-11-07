@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77594e44-8adc-47de-8947-d99b1b309f24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/AssignmentPart1/Task2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/Task1Tests/BrowserTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/Task1Tests/apiTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/Task2Tests/Task2Steps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/Task2Tests/TestRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/marketalertum.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AssignmentPart1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AssignmentPart1/apiCalls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/BrowserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/BrowserTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AssignmentPart1/apiCalls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AssignmentPart1/Task1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/BrowserTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,52 +44,103 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/UM/3rd year Sem1/CPS3230-Software Testing/Demos/cucumber-demo&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.BrowserTests">
-    <configuration name="BrowserTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\UM\3rd year Sem1\CPS3230-Software Testing\Exercises\AssignmentPart1\src\test\resources\features" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cucumber Java.Scenario: Valid Login">
+    <configuration name="Scenario: Invalid Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/marketalertum.feature" />
+      <option name="GLUE" value="test.AssignmentPart1.Task2Tests" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="AssignmentPart1" />
+      <option name="NAME_FILTER" value="^Invalid Login$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Invalid Login$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Invalid Login" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.AssignmentPart1.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.AssignmentPart1" />
-      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.BrowserTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BrowserTests.testDeleteAPICall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Valid Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/marketalertum.feature" />
+      <option name="GLUE" value="test.AssignmentPart1.Task2Tests" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="AssignmentPart1" />
+      <option name="NAME_FILTER" value="^Valid Login$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Valid Login$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Valid Login" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.AssignmentPart1.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.AssignmentPart1" />
-      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.BrowserTests" />
-      <option name="METHOD_NAME" value="testDeleteAPICall" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrowserTests.testAddItemToMyAlerts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AssignmentPart1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.AssignmentPart1.Task1Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.AssignmentPart1.Task1Tests" />
+      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.Task1Tests.BrowserTests" />
+      <option name="METHOD_NAME" value="testAddItemToMyAlerts" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BrowserTests.testPostAPICall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AssignmentPart1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.AssignmentPart1.*" />
+          <option name="PATTERN" value="test.AssignmentPart1.Task2Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.AssignmentPart1" />
-      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.BrowserTests" />
-      <option name="METHOD_NAME" value="testPostAPICall" />
+      <option name="PACKAGE_NAME" value="test.AssignmentPart1.Task2Tests" />
+      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.Task2Tests.TestRunner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="apiTests.testDeleteAPICall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AssignmentPart1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.AssignmentPart1.Task1Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.AssignmentPart1.Task1Tests" />
+      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.Task1Tests.apiTests" />
+      <option name="METHOD_NAME" value="testDeleteAPICall" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,9 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BrowserTests" />
-        <item itemvalue="JUnit.BrowserTests.testDeleteAPICall" />
-        <item itemvalue="JUnit.BrowserTests.testPostAPICall" />
+        <item itemvalue="Cucumber Java.Scenario: Valid Login" />
+        <item itemvalue="Cucumber Java.Scenario: Invalid Login" />
+        <item itemvalue="JUnit.TestRunner" />
+        <item itemvalue="JUnit.BrowserTests.testAddItemToMyAlerts" />
+        <item itemvalue="JUnit.apiTests.testDeleteAPICall" />
       </list>
     </recent_temporary>
   </component>
@@ -117,5 +177,25 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoSuchMethodError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AssignmentPart1$BrowserTests.ic" NAME="BrowserTests Coverage Results" MODIFIED="1666876754262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.AssignmentPart1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/AssignmentPart1$All_in_AssignmentPart1.ic" NAME="All in AssignmentPart1 Coverage Results" MODIFIED="1666890371690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

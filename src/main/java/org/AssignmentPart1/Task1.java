@@ -9,7 +9,7 @@ import java.net.URL;
 
 import org.json.simple.JSONObject;
 
-public class apiCalls {
+public class Task1 {
     public void postRequest(
         int alertType,
         String heading,
