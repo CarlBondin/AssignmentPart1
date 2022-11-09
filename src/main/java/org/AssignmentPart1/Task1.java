@@ -10,7 +10,7 @@ import java.net.URL;
 import org.json.simple.JSONObject;
 
 public class Task1 {
-    public void postRequest(
+    public int postRequest(
         int alertType,
         String heading,
         String description,
@@ -50,10 +50,11 @@ public class Task1 {
                 response.append(responseLine.trim());
             }
             System.out.println(response.toString());
+            return con.getResponseCode();
         }
     }
 
-    public void deleteRequest(String userId) throws IOException{
+    public int deleteRequest(String userId) throws IOException{
         URL endpoint = new URL("https://api.marketalertum.com/Alert?userId=" + userId);
         HttpURLConnection con = (HttpURLConnection) endpoint.openConnection();
         con.setRequestMethod("DELETE");
@@ -68,6 +69,7 @@ public class Task1 {
                 response.append(responseLine.trim());
             }
             System.out.println(response.toString());
+            return con.getResponseCode();
         }
     }
 }

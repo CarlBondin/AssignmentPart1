@@ -6,12 +6,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-
 import java.io.IOException;
 
 public class BrowserTests {
@@ -50,6 +48,7 @@ public class BrowserTests {
     @Test
     public void testAddItemToMyAlerts() throws IOException, NumberFormatException{
         //Testing the addition of one item to My Alerts
+
         //Getting item information
         String url = driver.findElement(By.xpath("//a[@class='header']")).getAttribute("href");
         driver.get(url);
@@ -72,7 +71,7 @@ public class BrowserTests {
         System.out.println("Price in cents: " + priceCents);
 
         //Calling REST API
-        call.postRequest(
+        int statusCode = call.postRequest(
                 1,
                 title,
                 description,
@@ -82,12 +81,14 @@ public class BrowserTests {
                 priceCents
         );
 
-
+        Assertions.assertEquals(201,statusCode);
     }
 
     @Test
     public void testDeleteAllItems() throws IOException {
-        call.deleteRequest("46aba3d5-35a9-4850-b5c1-02824284c450");
+        //Calling REST API
+        int statusCode = call.deleteRequest("46aba3d5-35a9-4850-b5c1-02824284c450");
+        Assertions.assertEquals(200,statusCode);
     }
 }
 

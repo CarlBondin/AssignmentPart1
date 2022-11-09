@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77594e44-8adc-47de-8947-d99b1b309f24" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AssignmentPart1/Task1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AssignmentPart1/Task1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/Task1Tests/BrowserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/Task1Tests/BrowserTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/Task2Tests/Task2Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/AssignmentPart1/Task2Tests/Task2Steps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/marketalertum.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/marketalertum.feature" afterDir="false" />
@@ -51,7 +52,7 @@
       <recent name="D:\Documents\UM\3rd year Sem1\CPS3230-Software Testing\Exercises\AssignmentPart1\src\test\resources\features" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BrowserTests.testDeleteAllItems">
     <configuration name="Scenario: Invalid Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/marketalertum.feature" />
@@ -108,6 +109,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BrowserTests.testDeleteAllItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AssignmentPart1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.AssignmentPart1.Task1Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.AssignmentPart1.Task1Tests" />
+      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.Task1Tests.BrowserTests" />
+      <option name="METHOD_NAME" value="testDeleteAllItems" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AssignmentPart1" />
       <extension name="coverage">
@@ -123,29 +140,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="apiTests.testDeleteAPICall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AssignmentPart1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.AssignmentPart1.Task1Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.AssignmentPart1.Task1Tests" />
-      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.Task1Tests.apiTests" />
-      <option name="METHOD_NAME" value="testDeleteAPICall" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BrowserTests.testDeleteAllItems" />
+        <item itemvalue="JUnit.BrowserTests.testAddItemToMyAlerts" />
         <item itemvalue="Cucumber Java.Scenario: Invalid Login" />
         <item itemvalue="Cucumber Java.Scenario: Valid Login" />
         <item itemvalue="JUnit.TestRunner" />
-        <item itemvalue="JUnit.BrowserTests.testAddItemToMyAlerts" />
-        <item itemvalue="JUnit.apiTests.testDeleteAPICall" />
       </list>
     </recent_temporary>
   </component>
