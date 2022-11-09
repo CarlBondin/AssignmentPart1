@@ -52,7 +52,7 @@
       <recent name="D:\Documents\UM\3rd year Sem1\CPS3230-Software Testing\Exercises\AssignmentPart1\src\test\resources\features" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BrowserTests.testDeleteAllItems">
+  <component name="RunManager" selected="JUnit.BrowserTests.testAddItemToMyAlerts">
     <configuration name="Scenario: Invalid Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/marketalertum.feature" />
@@ -93,6 +93,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BrowserTests.testAdd5ItemsToMyAlerts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AssignmentPart1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.AssignmentPart1.Task1Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.AssignmentPart1.Task1Tests" />
+      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.Task1Tests.BrowserTests" />
+      <option name="METHOD_NAME" value="testAdd5ItemsToMyAlerts" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BrowserTests.testAddItemToMyAlerts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AssignmentPart1" />
       <extension name="coverage">
@@ -125,28 +141,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AssignmentPart1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.AssignmentPart1.Task2Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.AssignmentPart1.Task2Tests" />
-      <option name="MAIN_CLASS_NAME" value="test.AssignmentPart1.Task2Tests.TestRunner" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BrowserTests.testDeleteAllItems" />
         <item itemvalue="JUnit.BrowserTests.testAddItemToMyAlerts" />
+        <item itemvalue="JUnit.BrowserTests.testDeleteAllItems" />
+        <item itemvalue="JUnit.BrowserTests.testAdd5ItemsToMyAlerts" />
         <item itemvalue="Cucumber Java.Scenario: Invalid Login" />
         <item itemvalue="Cucumber Java.Scenario: Valid Login" />
-        <item itemvalue="JUnit.TestRunner" />
       </list>
     </recent_temporary>
   </component>
