@@ -19,6 +19,10 @@ import org.openqa.selenium.interactions.Actions;
 public class Task1 {
     WebDriver driver;
 
+    public Task1(WebDriver driver){
+        this.driver = driver;
+    }
+
     public List<Integer> screenScraper() throws IOException {
         //Navigating to car category in maltapark
         navigation();
@@ -27,9 +31,6 @@ public class Task1 {
     }
 
     public String navigation(){
-        System.setProperty("webdriver.chrome.driver", "/Documents/UM/3rd year Sem1/CPS3230-Software Testing/Exercises/chromedriver_win32/chromedriver.exe");
-        driver = new ChromeDriver();
-
         //Navigating to Maltapark website
         driver.get("https://www.maltapark.com/");
         //Navigating to Cars Category by hovering on Cars & Parts hoverable menu
@@ -103,14 +104,73 @@ public class Task1 {
             Integer statusCode = Integer.valueOf(con.getResponseCode());
             statusCodes.add(statusCode);
         }
-        driver.quit();
+        return statusCodes;
+    }
+
+    public List<Integer> postRequest(int noOfAlerts, String alertType) throws IOException {
+        //List containing all status codes of every POST request
+        List<Integer> statusCodes = new ArrayList<Integer>();
+        for(int i = 0; i < noOfAlerts; i++){
+            //Setting up HTTP request connection + headers
+            URL endpoint = new URL("https://api.marketalertum.com/Alert");
+            HttpURLConnection con = (HttpURLConnection) endpoint.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Accept", "application/json");
+            con.setDoOutput(true);
+
+            //Getting Item Details
+            String url = driver.findElement(By.xpath("//a[@class='header']")).getAttribute("href");
+            driver.get(url);
+            String title = driver.findElement(By.xpath("//h1[@class='top-title']")).getText();
+            String imageUrl = driver.findElement(By.xpath("//a[@class = 'fancybox']")).getAttribute("href");
+            String description = driver.findElement(By.xpath("//div[@class='readmore-wrapper']")).getText();
+            String priceString = driver.findElement(By.xpath("//h1[@class='top-price']")).getText();
+            priceString = priceString.replace("€ ", "");
+            if (priceString.contains(",")) {
+                priceString = priceString.replace(",", "");
+            }
+            int price = Integer.parseInt(priceString);
+            int priceCents = price * 100;
+
+            //Logging of details
+            System.out.println("URL: " + url);
+            System.out.println("Title: " + title);
+            System.out.println("Image URL: " + imageUrl);
+            System.out.println("Description: " + description);
+            System.out.println("Price in cents: " + priceCents);
+
+            //Body
+            JSONObject body = new JSONObject();
+            body.put("alertType",Integer.parseInt(alertType));
+            body.put("heading",title);
+            body.put("description",description);
+            body.put("url",url);
+            body.put("imageURL",imageUrl);
+            body.put("postedBy","46aba3d5-35a9-4850-b5c1-02824284c450");
+            body.put("priceInCents",priceCents);
+
+            String stringBody = body.toString();
+            try(OutputStream os = con.getOutputStream()) {
+                byte[] input = stringBody.getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+            try(BufferedReader br = new BufferedReader(
+                    new InputStreamReader(con.getInputStream(), "utf-8"))) {
+                StringBuilder response = new StringBuilder();
+                String responseLine = null;
+                while ((responseLine = br.readLine()) != null) {
+                    response.append(responseLine.trim());
+                }
+                System.out.println(response.toString());
+            }
+            Integer statusCode = Integer.valueOf(con.getResponseCode());
+            statusCodes.add(statusCode);
+        }
         return statusCodes;
     }
 
     public int deleteRequest(String userId) throws IOException{
-        System.setProperty("webdriver.chrome.driver", "/Documents/UM/3rd year Sem1/CPS3230-Software Testing/Exercises/chromedriver_win32/chromedriver.exe");
-        driver = new ChromeDriver();
-
         URL endpoint = new URL("https://api.marketalertum.com/Alert?userId=" + userId);
         HttpURLConnection con = (HttpURLConnection) endpoint.openConnection();
         con.setRequestMethod("DELETE");
@@ -125,7 +185,6 @@ public class Task1 {
             }
 
             System.out.println(response.toString());
-            driver.quit();
             return con.getResponseCode();
         }
     }

@@ -35,18 +35,17 @@ Feature: Market Alert Website Functionality
 
   Scenario Outline: Icon check
   Given I am an administrator of the website
-  And I upload an alert of type <alert-type>
+  And I upload an alert of type "<alertType>"
   Given I am a user of marketalertum
   When I view a list of alerts
   Then I should see 1 alerts
-  And the icon displayed should be <file-name>
+  And the icon displayed should be "<fileName>"
 
   Examples:
-
-  |alert-type| file-name              |
-  |1         | icon-car.png           |
-  |2         | icon-boat.png          |
-  |3         | icon-property-rent.png |
-  |4         | icon-property-sale.png |
-  |5         | icon-toys.png          |
-  |6         | icon-electronics.png   |
+  |alertType| fileName              |
+  |1        | icon-car.png          |
+  |2        | icon-boat.png         |
+  |3        | icon-property-rent.jpg|
+  |4        | icon-property-sale.jpg|
+  |5        | icon-toys.png         |
+  |6        | icon-electronics.png  |
