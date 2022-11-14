@@ -1,34 +1,24 @@
 package test.AssignmentPart1.Task2Tests;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.AssignmentPart1.Task1;
 import org.AssignmentPart1.Task2;
+import org.json.simple.JSONObject;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
 
 public class Task2Steps {
-    WebDriver driver;
+
     Task2 test;
     Task1 testAPI;
 
-    @Before
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "/Documents/UM/3rd year Sem1/CPS3230-Software Testing/Exercises/chromedriver_win32/chromedriver.exe");
-        driver = new ChromeDriver();
-    }
-
     @Given("I am a user of marketalertum")
     public void iAmAUserOfMarketalertum() {
-        test = new Task2(driver);
+        test = new Task2();
     }
 
     @When("I login using valid credentials")
@@ -40,6 +30,8 @@ public class Task2Steps {
     public void iShouldSeeMyAlerts() {
         String alertsTitle = test.elementFinder("//main[@role='main']/h1");
         Assertions.assertEquals("Latest alerts for Carl Bondin", alertsTitle);
+        //teardown
+        test.teardown();
     }
 
     @When("I login using invalid credentials")
@@ -51,19 +43,23 @@ public class Task2Steps {
     public void iShouldSeeTheLoginScreenAgain() {
         String loginPage = test.elementFinder("//form[@method='post']/b");
         Assertions.assertEquals("User ID:", loginPage);
+        //teardown
+        test.teardown();
     }
 
     @Given("I am an administrator of the website")
-    public void iAmAnAdministratorOfTheWebsite() throws IOException {
-        testAPI = new Task1(driver);
-        //Deleting any previous alerts
-        testAPI.deleteRequest("46aba3d5-35a9-4850-b5c1-02824284c450");
+    public void iAmAnAdministratorOfTheWebsite(){
+        testAPI = new Task1();
     }
 
     @And("I upload {int} alerts")
     public void iUploadAlerts(int arg0) throws IOException {
         testAPI.navigation();
-        testAPI.postRequest(arg0);
+        testAPI.deleteRequest("46aba3d5-35a9-4850-b5c1-02824284c450");
+        for(int i = 0; i < arg0; i++) {
+            JSONObject alertData = testAPI.alertDetails();
+            testAPI.postRequest(alertData);
+        }
     }
 
     @When("I view a list of alerts")
@@ -123,25 +119,42 @@ public class Task2Steps {
             boolean check = imageUrl.isEmpty();
             Assertions.assertFalse(check);
         }
+
+        //teardown
+        test.teardown();
     }
 
     @And("I upload more than {int} alerts")
     public void iUploadMoreThanAlerts(int arg0) throws IOException {
         testAPI.navigation();
+        testAPI.deleteRequest("46aba3d5-35a9-4850-b5c1-02824284c450");
+        JSONObject alertData = testAPI.alertDetails();
         arg0++; //More than 5
-        testAPI.postRequest(arg0);
+        for(int i = 0; i < arg0; i++) {
+            testAPI.postRequest(alertData);
+        }
     }
 
     @Then("I should see {int} alerts")
     public void iShouldSeeAlerts(int arg0) {
-        int noOfAlerts = driver.findElements(By.xpath("//table/tbody")).size();
+        int noOfAlerts = test.elementCounter("//table/tbody");
         Assertions.assertEquals(arg0, noOfAlerts);
     }
 
     @And("I upload an alert of type {string}")
     public void iUploadAnAlertOfType(String arg0) throws IOException {
         testAPI.navigation();
-        testAPI.postRequest(1, arg0);
+        testAPI.deleteRequest("46aba3d5-35a9-4850-b5c1-02824284c450");
+        //Dummy object containing alert type given in example of scenario outline
+        JSONObject alertData = new JSONObject();
+        alertData.put("alertType",Integer.parseInt(arg0));
+        alertData.put("heading","Maserati Ghibli");
+        alertData.put("description","Maserati Ghibli V6 Diesel, 2015, black leather interior, 32,000 miles, Automatic.");
+        alertData.put("url","https://www.maltapark.com/item/details/9525491");
+        alertData.put("imageURL","https://www.maltapark.com/asset/itemphotos/9525491/9525491_1.jpg/?x=TWF4Vz01NjMmTWF4SD00MjI=&_ts=4");
+        alertData.put("postedBy","46aba3d5-35a9-4850-b5c1-02824284c450");
+        alertData.put("priceInCents","5000000");
+        testAPI.postRequest(alertData);
     }
 
     @And("the icon displayed should be {string}")
@@ -149,5 +162,7 @@ public class Task2Steps {
         test.login("46aba3d5-35a9-4850-b5c1-02824284c450");
         String icon = test.elementFinder("//img[@width='100']", "src");
         Assertions.assertEquals("https://www.marketalertum.com/images/" + arg0,icon);
+        //teardown
+        test.teardown();
     }
 }
